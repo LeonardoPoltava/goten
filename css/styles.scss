@@ -44,6 +44,7 @@ body {
   font-size: 16px;
   font-family: 'Poppins';
   line-height: 24px;
+  font-size-adjust: none;
 }
 
 a {
@@ -637,6 +638,7 @@ h2 {
     border-radius: 8px;
     background: var(--gray-50);
     text-align: center;
+    color: var(--text);
     @include bp1024 {
       padding: 49px 22px;
       border-radius: 16px;
@@ -715,6 +717,10 @@ h2 {
   &__side {
     background-color: var(--white);
     padding: 20px 20px 30px;
+    border-radius: 16px;
+    @include bp768 {
+      border-radius: 16px 0 0 16px;
+    }
     @include bp1024 {
       padding: 80px 40px 80px 56px;
     }
@@ -733,6 +739,7 @@ h2 {
   }
 
   .swiper-slide {
+    background-color: var(--white);
     border-radius: 16px;
     border: 1px solid var(--primary-50);
     @include bp768 {
