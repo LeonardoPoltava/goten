@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <title>Goten</title>
+    <link href="dist/css/styles.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link
+            href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+            rel="stylesheet"
+    />
+</head>
+<body>
+<div class="wrapper main-page">
+    <header class="header">
+        <div class="header__container container">
+            <a class="logo" href="/"><img alt="Goten logo" height="48" src="images/logo.svg" width="94"></a>
+            <button class="header__burger"></button>
+            <nav class="nav-menu">
+                <a class="nav-menu__elem" href="#">Technologies</a>
+                <a class="nav-menu__elem" href="#">Portfolio</a>
+                <a class="nav-menu__elem" href="#">Careers</a>
+                <a class="nav-menu__elem" href="#">Blog</a>
+            </nav>
+            <button class="header__btn btn" type="button">Contact Us</button>
+        </div>
+    </header>
+    <section class="dashboard container">
+        <h1 class="dashboard__title">Simply the Best Cutting-Edge Software Development Company</h1>
+        <h3 class="dashboard__text">We’re a full-cycle web and mobile application development company that creates
+            software solutions tailored to the demands of businesses</h3>
+        <form action="#" class="quote-form" method="post">
+            <input class="quote-form__input" placeholder="Your business email*" type="text">
+            <button class="quote-form__btn btn">Get a quote</button>
+        </form>
+    </section>
+    <section class="industries indent container">
+        <h2>Industries in focus</h2>
+        <div class="industries-list">
+            <div class="industries-list__elem">
+                <img alt="e-commerce & retail icon" class="industries-list__icon" height="36" src="images/industries/ecommerce.svg"
+                     width="36">
+                <span class="industries-list__title">E-Commerce & Retail</span>
+                <p>Telemedicine, pharma & biotechnology solutions, hospital management, patient databases, EHRs, and
+                    more!</p>
+            </div>
+            <div class="industries-list__elem">
+                <img alt="real estate icon" class="industries-list__icon" height="36" src="images/industries/estate.svg"
+                     width="36">
+                <span class="industries-list__title">Real Estate</span>
+                <p>Telemedicine, pharma & biotechnology solutions, hospital management, patient databases, EHRs, and
+                    more!</p>
+            </div>
+            <div class="industries-list__elem">
+                <img alt="automotive & mobility icon" class="industries-list__icon" height="36" src="images/industries/auto.svg"
+                     width="36">
+                <span class="industries-list__title">Automotive & Mobility</span>
+                <p>Telemedicine, pharma & biotechnology solutions, hospital management, patient databases, EHRs, and
+                    more!</p>
+            </div>
+            <div class="industries-list__elem">
+                <img alt="financial services icon" class="industries-list__icon" height="36" src="images/industries/financial.svg"
+                     width="36">
+                <span class="industries-list__title">Financial Services</span>
+                <p>Telemedicine, pharma & biotechnology solutions, hospital management, patient databases, EHRs, and
+                    more!</p>
+            </div>
+            <div class="industries-list__elem">
+                <img alt="healthcare icon" class="industries-list__icon" height="36" src="images/industries/health.svg"
+                     width="36">
+                <span class="industries-list__title">Healthcare</span>
+                <p>Telemedicine, pharma & biotechnology solutions, hospital management, patient databases, EHRs, and
+                    more!</p>
+            </div>
+            <div class="industries-list__elem">
+                <img alt="blockchain icon" class="industries-list__icon" height="36" src="images/industries/blockchain.svg"
+                     width="36">
+                <span class="industries-list__title">Blockchain</span>
+                <p>Telemedicine, pharma & biotechnology solutions, hospital management, patient databases, EHRs, and
+                    more!</p>
+            </div>
+        </div>
+    </section>
+    <section class="projects indent container">
+        <h2>Our projects</h2>
+        <div class="projects-list">
+            <div class="projects-list__elem">
+                <picture class="projects-list__pic">
+                    <source src="images/projects/project-medical.webp"
+                            srcset="images/projects/project-medical@2x.webp 2x" type="image/webp">
+                    <img alt="project medical image" class="projects-list__img"
+                         src="images/projects/project-medical.jpg" srcset="images/projects/project-medical@2x.jpg 2x">
+                </picture>
+                <div class="projects-list__content">
+                    <span class="projects-list__type">Healthcare</span>
+                    <span class="projects-list__title">Medical App</span>
+                    <span class="projects-list__text">A Multiplatform Application for Remote Healthcare</span>
+                    <div class="projects-tech">
+                        <span class="projects-tech__title">Technologies</span>
+                        <span class="projects-tech__text">ASP.NET Core/ ReactJS/ PostgreSQL/ WebRTC/ Swift/ Kotlin/ iOS/ Android</span>
+                    </div>
+                    <div class="projects-info">
+                        <div class="projects-info__elem">
+                            <span class="projects-info__title">Country</span>
+                            <span class="projects-info__text"><img alt="usa flag" height="21" src="images/usa.svg"
+                                                                   width="20">USA</span>
+                        </div>
+                        <div class="projects-info__elem">
+                            <span class="projects-info__title">Duration</span>
+                            <span class="projects-info__text">24+ months</span>
+                        </div>
+                        <div class="projects-info__elem">
+                            <span class="projects-info__title">Team size</span>
+                            <span class="projects-info__text">4 Developers</span>
+                        </div>
+                    </div>
+                    <button class="projects-list__btn">View case <img alt="" height="25" src="images/arrow.svg"
+                                                                      width="24"></button>
+                </div>
+            </div>
+            <div class="projects-list__elem">
+                <picture class="projects-list__pic">
+                    <source src="images/projects/project-property.webp"
+                            srcset="images/projects/project-property@2x.webp 2x" type="image/webp">
+                    <img alt="project property image" class="projects-list__img"
+                         src="images/projects/project-property.jpg" srcset="images/projects/project-property@2x.jpg 2x">
+                </picture>
+                <div class="projects-list__content">
+                    <span class="projects-list__type">Real Estate</span>
+                    <span class="projects-list__title">Property portal</span>
+                    <span class="projects-list__text">Integrating loT technology into the property rental industry</span>
+                    <div class="projects-tech">
+                        <span class="projects-tech__title">Technologies</span>
+                        <span class="projects-tech__text">Swift / Google Maps & Places / Wordpress / Firebase / MVC / iOS / Android</span>
+                    </div>
+                    <div class="projects-info">
+                        <div class="projects-info__elem">
+                            <span class="projects-info__title">Country</span>
+                            <span class="projects-info__text"><img alt="usa flag" height="21" src="images/usa.svg"
+                                                                   width="20">USA</span>
+                        </div>
+                        <div class="projects-info__elem">
+                            <span class="projects-info__title">Duration</span>
+                            <span class="projects-info__text">Ongoing</span>
+                        </div>
+                        <div class="projects-info__elem">
+                            <span class="projects-info__title">Team size</span>
+                            <span class="projects-info__text">5 Developers</span>
+                        </div>
+                    </div>
+                    <button class="projects-list__btn">View case <img alt="" height="25" src="images/arrow.svg"
+                                                                      width="24"></button>
+                </div>
+            </div>
+        </div>
+        <div class="center">
+            <a class="projects__more" href="#">Explore more</a>
+        </div>
+    </section>
+    <section class="engagement indent">
+        <div class="container">
+            <h2>Engagement models</h2>
+            <div class="engagement-table">
+                <div class="engagement-table__col">
+                    <span class="engagement-table__text medium">Duration</span>
+                    <span class="engagement-table__text medium">Requirements</span>
+                    <span class="engagement-table__text medium">Our team</span>
+                    <span class="engagement-table__text medium">Best for</span>
+                </div>
+                <div class="engagement-table__col">
+                    <span class="engagement-table__title">Dedicated dev team</span>
+                    <span class="engagement-table__text"><span class="engagement-table__sub">Duration</span>Over 6 months</span>
+                    <span class="engagement-table__text"><span class="engagement-table__sub">Requirements</span>High level and may change</span>
+                    <span class="engagement-table__text"><span class="engagement-table__sub">Our team</span>Fixed</span>
+                    <span class="engagement-table__text semi-bold"><span class="engagement-table__sub">Best for</span>New product development with ongoing support</span>
+                </div>
+                <div class="engagement-table__col">
+                    <span class="engagement-table__title">Team Extension</span>
+                    <span class="engagement-table__text"><span class="engagement-table__sub">Duration</span>Over 6 months</span>
+                    <span class="engagement-table__text"><span class="engagement-table__sub">Requirements</span>High level and may change</span>
+                    <span class="engagement-table__text"><span class="engagement-table__sub">Our team</span>Fixed</span>
+                    <span class="engagement-table__text semi-bold"><span class="engagement-table__sub">Best for</span>Delivering more features from multiple teams for an existing product</span>
+                </div>
+                <div class="engagement-table__col">
+                    <span class="engagement-table__title">Product Development</span>
+                    <span class="engagement-table__text"><span class="engagement-table__sub">Duration</span>Over 6 months</span>
+                    <span class="engagement-table__text"><span class="engagement-table__sub">Requirements</span>Very detailed with minimal change</span>
+                    <span class="engagement-table__text"><span
+                            class="engagement-table__sub">Our team</span>On demand</span>
+                    <span class="engagement-table__text semi-bold"><span class="engagement-table__sub">Best for</span>Minimum viable product development</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="bases indent container">
+        <h2>Bases we cover</h2>
+        <div class="bases-container">
+            <div class="bases-icons">
+                <div class="bases-icons__list bases-icons__list--active" data-tab="back" data-tab-block>
+                    <div class="bases-icons__elem">
+                        <img alt="node js icon" class="bases-icons__img" height="48" src="images/logos/Name=Node%20JS.svg"
+                             width="48">
+                        <p>Node JS</p>
+                    </div>
+                    <div class="bases-icons__elem">
+                        <img alt="c++ icon" class="bases-icons__img" height="48" src="images/logos/Name=C++.svg"
+                             width="48">
+                        <p>C++</p>
+                    </div>
+                    <div class="bases-icons__elem">
+                        <img alt="ruby icon" class="bases-icons__img" height="48" src="images/logos/Name=Ruby.svg"
+                             width="48">
+                        <p>Ruby</p>
+                    </div>
+                    <div class="bases-icons__elem">
+                        <img alt="python icon" class="bases-icons__img" height="48" src="images/logos/Name=Pyton.svg"
+                             width="48">
+                        <p>Python</p>
+                    </div>
+                    <div class="bases-icons__elem">
+                        <img alt="c++ icon" class="bases-icons__img" height="48" src="images/logos/Name=php.svg"
+                             width="48">
+                        <p>Php</p>
+                    </div>
+                    <div class="bases-icons__elem">
+                        <img alt="c# icon" class="bases-icons__img" height="48" src="images/logos/Name=C%23.svg"
+                             width="48">
+                        <p>C#</p>
+                    </div>
+                    <div class="bases-icons__elem">
+                        <img alt="django icon" class="bases-icons__img" height="48" src="images/logos/Name=django.svg"
+                             width="48">
+                        <p>Django</p>
+                    </div>
+                    <div class="bases-icons__elem">
+                        <img alt="laravel icon" class="bases-icons__img" height="48" src="images/logos/Name=laravel.svg"
+                             width="48">
+                        <p>Laravel</p>
+                    </div>
+                    <div class="bases-icons__elem">
+                        <img alt="symphony icon" class="bases-icons__img" height="48" src="images/logos/Name=symphony.svg"
+                             width="48">
+                        <p>Symphony</p>
+                    </div>
+                    <div class="bases-icons__elem">
+                        <img alt="ruby on rails icon" class="bases-icons__img" height="48"
+                             src="images/logos/Name=Ruby%20On%20Rails.svg" width="48">
+                        <p>Ruby On Rails</p>
+                    </div>
+                </div>
+                <div class="bases-icons__list" data-tab="front" data-tab-block>
+                    <div class="bases-icons__elem">
+                        <img alt="ruby on rails icon" class="bases-icons__img" height="48"
+                             src="images/logos/Name=Ruby%20On%20Rails.svg" width="48">
+                        <p>Ruby On Rails</p>
+                    </div>
+                </div>
+            </div>
+            <div class="bases-tabs">
+                <button class="bases-tabs__elem" data-tab="front" type="button">WEB FRONTEND</button>
+                <button class="bases-tabs__elem" type="button">BIG DATA</button>
+                <button class="bases-tabs__elem" type="button">DEVOPS</button>
+                <button class="bases-tabs__elem" type="button">DATABASE</button>
+                <button class="bases-tabs__elem bases-tabs__elem--active" data-tab="back" type="button">BACK END
+                </button>
+                <button class="bases-tabs__elem" type="button">QUALITY ASSURANCE</button>
+                <button class="bases-tabs__elem" type="button">CLOUD SOLUTIONS</button>
+                <button class="bases-tabs__elem" type="button">BLOCKCHAIN</button>
+                <button class="bases-tabs__elem" type="button">MOBILE</button>
+                <button class="bases-tabs__elem" type="button">INTERNET OF THINGS</button>
+            </div>
+            <p class="bases__text">We develop fully functional web applications, available online to millions of users
+                in any country of the world. Our team works with various databases and APIs, implements scaling and
+                integration with other services. By mixing technology stacks effectively, Brights Ukrainian web
+                development company devises solutions that streamline your business operations and deliver value to your
+                customers. We have been in the development market for 8 years! Guiding you through all the web
+                development stages we provide you the best customer-oriented technologies for your custom web
+                application development.</p>
+        </div>
+    </section>
+    <section class="clients indent">
+        <div class="container">
+            <h2>Our clients say about us</h2>
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="clients__side">
+                            <div class="clients__profile">
+                                <img alt="" class="clients__avatar" height="72" src="images/avatar.jpg" width="72">
+                                <div class="clients__info">
+                                    <span class="clients__name">Anna Unterman </span>
+                                    <span class="clients__work">Managing Director at MobiAds</span>
+                                </div>
+                            </div>
+                            <p class="clients__text">Hivex are great with time management and produce high-quality work.
+                                Because of how satisfied we've been with their work on this project, we're exploring
+                                bringing them in on a new project as well.</p>
+                        </div>
+                        <div class="clients__aside">
+                            <span class="clients__title">Technologies</span>
+                            <div class="clients-tech">
+                                <span class="clients-tech__elem">ASP.NET Core</span>
+                                <span class="clients-tech__elem">ReactJS</span>
+                                <span class="clients-tech__elem">PostgreSQL</span>
+                                <span class="clients-tech__elem">WebRTC</span>
+                                <span class="clients-tech__elem">Swift</span>
+                                <span class="clients-tech__elem">Kotlin</span>
+                                <span class="clients-tech__elem">iOS</span>
+                                <span class="clients-tech__elem">Android</span>
+                            </div>
+                            <div class="clients-tech-info">
+                                <div class="clients-tech-info__elem">
+                                    <span class="clients__title clients-tech-info__title">Duration</span>
+                                    <span class="clients-tech-info__text">24+ months</span>
+                                </div>
+                                <div class="clients-tech-info__elem">
+                                    <span class="clients__title clients-tech-info__title">Team size</span>
+                                    <span class="clients-tech-info__text">4 Developers</span>
+                                </div>
+                                <div class="clients-tech-info__elem">
+                                    <span class="clients__title clients-tech-info__title">Country</span>
+                                    <span class="clients-tech-info__text"><img alt="usa flag" height="21"
+                                                                               src="images/usa.svg" width="20">USA</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="clients__side">
+                            <div class="clients__profile">
+                                <img alt="" class="clients__avatar" height="72" src="images/avatar.jpg" width="72">
+                                <div class="clients__info">
+                                    <span class="clients__name">Anna Unterman </span>
+                                    <span class="clients__work">Managing Director at MobiAds</span>
+                                </div>
+                            </div>
+                            <p class="clients__text">Hivex are great with time management and produce high-quality work.
+                                Because of how satisfied we've been with their work on this project, we're exploring
+                                bringing them in on a new project as well.</p>
+                        </div>
+                        <div class="clients__aside">
+                            <span class="clients__title">Technologies</span>
+                            <div class="clients-tech">
+                                <span class="clients-tech__elem">ASP.NET Core</span>
+                                <span class="clients-tech__elem">ReactJS</span>
+                                <span class="clients-tech__elem">PostgreSQL</span>
+                                <span class="clients-tech__elem">WebRTC</span>
+                                <span class="clients-tech__elem">Swift</span>
+                                <span class="clients-tech__elem">Kotlin</span>
+                                <span class="clients-tech__elem">iOS</span>
+                                <span class="clients-tech__elem">Android</span>
+                            </div>
+                            <div class="clients-tech-info">
+                                <div class="clients-tech-info__elem">
+                                    <span class="clients__title clients-tech-info__title">Duration</span>
+                                    <span class="clients-tech-info__text">24+ months</span>
+                                </div>
+                                <div class="clients-tech-info__elem">
+                                    <span class="clients__title clients-tech-info__title">Team size</span>
+                                    <span class="clients-tech-info__text">4 Developers</span>
+                                </div>
+                                <div class="clients-tech-info__elem">
+                                    <span class="clients__title clients-tech-info__title">Country</span>
+                                    <span class="clients-tech-info__text"><img alt="usa flag" height="21"
+                                                                               src="images/usa.svg" width="20">USA</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="clients__side">
+                            <div class="clients__profile">
+                                <img alt="" class="clients__avatar" height="72" src="images/avatar.jpg" width="72">
+                                <div class="clients__info">
+                                    <span class="clients__name">Anna Unterman </span>
+                                    <span class="clients__work">Managing Director at MobiAds</span>
+                                </div>
+                            </div>
+                            <p class="clients__text">Hivex are great with time management and produce high-quality work.
+                                Because of how satisfied we've been with their work on this project, we're exploring
+                                bringing them in on a new project as well.</p>
+                        </div>
+                        <div class="clients__aside">
+                            <span class="clients__title">Technologies</span>
+                            <div class="clients-tech">
+                                <span class="clients-tech__elem">ASP.NET Core</span>
+                                <span class="clients-tech__elem">ReactJS</span>
+                                <span class="clients-tech__elem">PostgreSQL</span>
+                                <span class="clients-tech__elem">WebRTC</span>
+                                <span class="clients-tech__elem">Swift</span>
+                                <span class="clients-tech__elem">Kotlin</span>
+                                <span class="clients-tech__elem">iOS</span>
+                                <span class="clients-tech__elem">Android</span>
+                            </div>
+                            <div class="clients-tech-info">
+                                <div class="clients-tech-info__elem">
+                                    <span class="clients__title clients-tech-info__title">Duration</span>
+                                    <span class="clients-tech-info__text">24+ months</span>
+                                </div>
+                                <div class="clients-tech-info__elem">
+                                    <span class="clients__title clients-tech-info__title">Team size</span>
+                                    <span class="clients-tech-info__text">4 Developers</span>
+                                </div>
+                                <div class="clients-tech-info__elem">
+                                    <span class="clients__title clients-tech-info__title">Country</span>
+                                    <span class="clients-tech-info__text"><img alt="usa flag" height="21"
+                                                                               src="images/usa.svg" width="20">USA</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </div>
+    </section>
+    <section class="benefits indent container">
+        <h2>Benefits of working with us</h2>
+        <div class="benefits-list">
+            <div class="benefits-list__elem">
+                <img alt="" class="benefits-list__icon" height="36" src="images/team.svg" width="36">
+                <span class="benefits-list__title">Committed team</span>
+                <p>Our team will literally plug into your business so they can grasp your goals and your needs. We
+                    deliver solutions specially designed for you and go the extra mile whenever needed, You get more
+                    than just great minds, you get people with their hearts in the right place.</p>
+            </div>
+            <div class="benefits-list__elem">
+                <img alt="" class="benefits-list__icon" height="36" src="images/solution.svg" width="36">
+                <span class="benefits-list__title">Real solutions</span>
+                <p>We act as a partner, not just a vendor: we ask lots of questions and challenge ideas to find the best
+                    way forward. The knowledge, work ethic, and realistic approach of our team mean you'll receive
+                    genuine advice to help accelerate your success and fulfill your vision.</p>
+            </div>
+            <div class="benefits-list__elem">
+                <img alt="" class="benefits-list__icon" height="36" src="images/familiarity.svg" width="36">
+                <span class="benefits-list__title">Familiarity & reliability</span>
+                <p>Developing great relationships and cultural fit is just as important as tech competences. When you're
+                    a client, you get good communication, transparency, and a loyal, long-term team that you can trust
+                    to always deliver. We are your colleagues from Kyiv and USA.</p>
+            </div>
+        </div>
+    </section>
+    <section class="contact indent container">
+        <div class="contact-container">
+            <h2 class="contact__title">Start growing your business with us</h2>
+            <span class="contact__text">Please fill out and submit the form, or contact us at sales@goten.com for more information on Goten's services and technologies.</span>
+            <form action="#" class="contact-form" method="post">
+                <label class="contact-form__label" for="name">Full Name</label>
+                <input class="contact-form__input" id="name" name="name" placeholder="Your name" type="text">
+                <label class="contact-form__label" for="email">Email</label>
+                <input class="contact-form__input" id="email" name="email" placeholder="Email" type="email">
+                <label class="contact-form__label" for="phone">Phone</label>
+                <input class="contact-form__input" id="phone" name="phone" placeholder="Phone" type="tel">
+                <div class="contact-form__footer">
+                    <span class="contact-form__info">By sending this form I confirm that I have read and accept the Privacy Policy</span>
+                    <button class="contact-form__btn btn">Contact us</button>
+                </div>
+            </form>
+        </div>
+    </section>
+    <footer class="footer indent">
+        <div class="container">
+            <div class="footer__head">
+                <div class="footer__left">
+                    <span class="footer__title">stay in touch with us</span>
+                    <a class="footer__link" href="mailto: info@goten.com">info@goten.com</a>
+                    <a class="footer__link" href="tel: +1 (000) 345-7771">+1 (000) 345-7771</a>
+                </div>
+                <form action="#" class="quote-form" method="post">
+                    <input class="quote-form__input" placeholder="Your business email*" type="text">
+                    <button class="quote-form__btn btn">Get a quote</button>
+                </form>
+            </div>
+            <nav class="footer-nav">
+                <a class="footer-nav__link" href="#">Technologies</a>
+                <a class="footer-nav__link" href="#">Privacy policy</a>
+                <a class="footer-nav__link" href="#">Careers</a>
+                <a class="footer-nav__link" href="#">Portfolio</a>
+                <a class="footer-nav__link" href="#">Blog</a>
+                <a class="footer-nav__link" href="#">Contact us</a>
+            </nav>
+            <div class="footer-bottom">
+                <a class="logo" href="/"><img alt="Goten logo" height="62" src="images/logo.svg" width="125"></a>
+                <div class="footer-social">
+                    <a class="footer-social__link" href="#"><img alt="" class="footer-social__img" height="24" src="images/tt.svg"
+                                                                 width="24"></a>
+                    <a class="footer-social__link" href="#"><img alt="" class="footer-social__img" height="24" src="images/in.svg"
+                                                                 width="24"></a>
+                    <a class="footer-social__link" href="#"><img alt="" class="footer-social__img" height="24" src="images/fb.svg"
+                                                                 width="24"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<script src="dist/js/bundle.js" type="text/javascript"></script>
+</body>
+</html>
