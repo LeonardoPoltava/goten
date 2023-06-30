@@ -36,3 +36,19 @@ const swiper = new Swiper('.swiper', {
         prevEl: '.swiper-button-prev',
     },
 });
+// navigation
+const burgerButton = document.querySelector('.header__burger');
+const navigation = document.querySelector('.mobile-nav');
+const header = document.querySelector('.header');
+
+burgerButton.addEventListener('click', function () {
+    if (navigation.style.display === 'flex') {
+        navigation.style.display = 'none';
+        burgerButton.classList.remove('header__burger--active');
+        header.classList.remove('header--active');
+    } else {
+        navigation.style.display = 'flex';
+        header.classList.add('header--active');
+        burgerButton.classList.add('header__burger--active');
+    }
+});

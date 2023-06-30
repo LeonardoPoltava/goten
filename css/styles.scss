@@ -122,8 +122,18 @@ h2 {
   }
 }
 
+.wrapper {
+  padding-top: 90px;
+  @include bp768 {
+    padding-top: 0;
+  }
+}
+
 .main-page {
-  background: url("../../images/dashboard.svg") no-repeat 50% 112px / 100% auto;
+  background: url("../../images/mobile-dashboard.svg") no-repeat 50% 0 / 100% auto;
+  @include bp768 {
+    background: url("../../images/dashboard.svg") no-repeat 50% 112px / 100% auto;
+  }
 }
 
 .btn {
@@ -151,6 +161,21 @@ h2 {
 // header
 .header {
   padding: 20px 0;
+  position: fixed;
+  z-index: 3;
+  box-shadow: 0 0 10px 1px var(--primary-100);
+  background-color: var(--white);
+  top: 0;
+  left: 0;
+  width: 100%;
+  @include bp768 {
+    position: static;
+    box-shadow: none;
+  }
+
+  &--active {
+    box-shadow: none;
+  }
 
   &__container {
     display: flex;
@@ -175,13 +200,51 @@ h2 {
   }
 
   &__burger {
-    background: url("../../images/burger.svg") no-repeat;
-    width: 24px;
-    height: 24px;
+    background-image: url("../../images/burger.svg");
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-position: 50% 50%;
+    width: 45px;
+    height: 45px;
     display: block;
+
+    &:active {
+      background-color: var(--primary-50);
+    }
+
+    &--active {
+      background-image: url("../../images/close.svg");
+      background-color: var(--primary-50);
+    }
+
     @include bp768 {
       display: none;
     }
+  }
+}
+
+.mobile-nav {
+  display: none;
+  position: fixed;
+  flex-direction: column;
+  inset: 0;
+  padding: 138px 16px 85px;
+  background-color: var(--white);
+  z-index: 2;
+
+  &__elem {
+    display: block;
+    color: var(--text, #2F3747);
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 28px;
+    margin-bottom: 24px;
+  }
+
+  &__btn {
+    width: 100%;
+    margin-top: auto;
   }
 }
 
@@ -205,7 +268,7 @@ h2 {
 // dashboard
 .dashboard {
   padding-top: 56px;
-  padding-bottom: 112px;
+  padding-bottom: 56px;
   @include bp1024 {
     padding-top: 144px;
     padding-bottom: 216px;
@@ -290,12 +353,13 @@ h2 {
     display: flex;
     align-items: center;
     border-radius: 8px;
-    background: var(--gray-50);
+    background: var(--primary-50);
     padding: 28px 20px;
     @include bp540 {
       display: block;
       padding: 24px;
       border-radius: 16px;
+      background: var(--gray-50);
     }
     @include bp1440 {
       padding: 36px;
