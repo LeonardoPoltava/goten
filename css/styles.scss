@@ -450,6 +450,30 @@ h2 {
         background: var(--primary-50);
       }
     }
+
+    &:nth-child(3) {
+      .projects-list__pic {
+        background: #FBE6E5;
+      }
+    }
+
+    &:nth-child(4) {
+      .projects-list__pic {
+        background: #FEF5E7;
+      }
+    }
+
+    &:nth-child(5) {
+      .projects-list__pic {
+        background: #FEE7F6;
+      }
+    }
+
+    &:nth-child(6) {
+      .projects-list__pic {
+        background: #E7F1FE;
+      }
+    }
   }
 
   &__text {
@@ -462,10 +486,11 @@ h2 {
   }
 
   &__pic {
-    border-radius: 16px 0 0 16px;
+    border-radius: 8px;
     padding: 49px 45px;
     display: block;
     @include bp768 {
+      border-radius: 16px 0 0 16px;
       display: flex;
       align-items: center;
       padding: 61px 25px;
@@ -1186,4 +1211,11 @@ h2 {
 .footer-social {
   display: flex;
   gap: 20px;
+}
+// projects page
+.title {
+  margin-bottom: 24px;
+  @include bp768 {
+    margin-bottom: 48px;
+  }
 }
