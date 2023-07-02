@@ -1,3 +1,15 @@
+// head
+document.querySelector(".header__btn").addEventListener("click", function (e) {
+    e.preventDefault();
+    document.querySelector('.contact').scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+})
+document.querySelector(".mobile-nav__btn").addEventListener("click", function (e) {
+    e.preventDefault();
+    navigation.style.display = 'none';
+    burgerButton.classList.remove('header__burger--active');
+    header.classList.remove('header--active');
+    document.querySelector('.contact').scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+})
 // Get all buttons with data-tab attribute
 const buttons = document.querySelectorAll('.bases-tabs__elem[data-tab]');
 
@@ -51,4 +63,22 @@ burgerButton.addEventListener('click', function () {
         header.classList.add('header--active');
         burgerButton.classList.add('header__burger--active');
     }
+});
+// blog
+const filterButtons = document.querySelectorAll('.blog-filter__button');
+filterButtons.forEach(button => {
+    button.addEventListener('click', function () {
+        const tabName = this.getAttribute('data-category');
+        const blocks = document.querySelectorAll(`.blog-list__elem`);
+
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        blocks.forEach(post => {
+            if (tabName === 'all' || post.dataset.category === tabName) {
+                post.style.display = 'grid';
+            } else {
+                post.style.display = 'none';
+            }
+        });
+        this.classList.add('active');
+    });
 });
