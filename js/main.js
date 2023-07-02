@@ -52,3 +52,21 @@ burgerButton.addEventListener('click', function () {
         burgerButton.classList.add('header__burger--active');
     }
 });
+// blog
+const filterButtons = document.querySelectorAll('.blog-filter__button');
+filterButtons.forEach(button => {
+    button.addEventListener('click', function () {
+        const tabName = this.getAttribute('data-category');
+        const blocks = document.querySelectorAll(`.blog-list__elem`);
+
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        blocks.forEach(post => {
+            if (tabName === 'all' || post.dataset.category === tabName) {
+                post.style.display = 'grid';
+            } else {
+                post.style.display = 'none';
+            }
+        });
+        this.classList.add('active');
+    });
+});
