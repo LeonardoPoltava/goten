@@ -1,3 +1,15 @@
+// head
+document.querySelector(".header__btn").addEventListener("click", function (e) {
+    e.preventDefault();
+    document.querySelector('.contact').scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+})
+document.querySelector(".mobile-nav__btn").addEventListener("click", function (e) {
+    e.preventDefault();
+    navigation.style.display = 'none';
+    burgerButton.classList.remove('header__burger--active');
+    header.classList.remove('header--active');
+    document.querySelector('.contact').scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+})
 // Get all buttons with data-tab attribute
 const buttons = document.querySelectorAll('.bases-tabs__elem[data-tab]');
 

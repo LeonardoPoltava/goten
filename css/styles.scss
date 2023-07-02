@@ -8,6 +8,7 @@
   --primary-100: #D8CCFF;
   --primary-300: #8A66FF;
   --primary-500: #6C40FF;
+  --primary-600: #3000CC;
 }
 
 @mixin bp540 {
@@ -57,9 +58,21 @@ button {
   border: none;
   cursor: pointer;
 }
-
-input:focus::placeholder {
-  opacity: 0;
+input {
+  color: var(--text);
+  &::placeholder {
+    color: var(--gray-400);
+  }
+}
+input:focus {
+  border-color: var(--primary-500);
+  &::placeholder {
+    opacity: 0;
+  }
+}
+input:not(:placeholder-shown) {
+  border: 1px solid var(--primary-500);
+  box-shadow: 0 15px 33px 0 rgba(47, 55, 71, 0.08), 0 0 0 4px #EBE5FF;
 }
 
 * {
@@ -146,6 +159,9 @@ h2 {
   font-size: 16px;
   font-weight: 500;
   line-height: 24px;
+  &:hover {
+    background: var(--primary-600);
+  }
   @include bp1024 {
     padding: 12px 20px;
   }
@@ -242,6 +258,10 @@ h2 {
     font-weight: 500;
     line-height: 28px;
     margin-bottom: 24px;
+    &.active,
+    &:hover {
+      color: var(--primary-600);
+    }
   }
 
   &__btn {
@@ -264,6 +284,10 @@ h2 {
     font-weight: 500;
     text-decoration: none;
     line-height: 1;
+    &.active,
+    &:hover {
+      color: var(--primary-600);
+    }
   }
 }
 
@@ -297,6 +321,9 @@ h2 {
 .quote-form {
   width: 100%;
   max-width: 588px;
+  &:focus-within {
+    border-color: var(--primary-500);
+  }
   @include bp768 {
     display: flex;
     justify-content: space-between;
@@ -319,6 +346,9 @@ h2 {
     border: 1px solid var(--primary-50);
     background: var(--white);
     box-shadow: 0 6px 12px 0 rgba(47, 55, 71, 0.04);
+    &:not(:placeholder-shown) {
+      box-shadow: 0 6px 12px 0 rgba(47, 55, 71, 0.04);
+    }
     @include bp768 {
       padding: 12px;
       width: 429px;
@@ -327,6 +357,10 @@ h2 {
       background: none;
       border: none;
       box-shadow: none;
+      &:not(:placeholder-shown) {
+        border: none;
+        box-shadow: none;
+      }
     }
   }
 
@@ -1022,6 +1056,7 @@ h2 {
 
 // contact
 .contact {
+  scroll-margin: 36px;
   padding-left: 0;
   padding-right: 0;
   @include bp768 {
@@ -1031,6 +1066,7 @@ h2 {
   @include bp1024 {
     padding-left: 60px;
     padding-right: 60px;
+    scroll-margin: 52px;
   }
   @include bp1440 {
     padding-left: 112px;
@@ -1105,7 +1141,6 @@ h2 {
     background: var(--white);
     font-size: 16px;
     line-height: 24px;
-    color: var(--gray-400);
   }
 
   &__footer {
@@ -1201,6 +1236,10 @@ h2 {
   &__link {
     font-weight: 500;
     color: var(--text);
+    &.active,
+    &:hover {
+      color: var(--primary-600);
+    }
   }
 }
 
@@ -1213,6 +1252,12 @@ h2 {
 .footer-social {
   display: flex;
   gap: 20px;
+  &__img {
+    color: var(--text);
+    &:hover {
+      color: var(--primary-500);
+    }
+  }
 }
 // projects page
 .title {
@@ -1619,13 +1664,16 @@ h2 {
   }
   &__button {
     border-radius: 30px;
-    background: var(--primary-50);
+    background-color: var(--primary-50);
     padding: 8px 12px;
-    color: var(--text, #2F3747);
+    color: var(--text);
     text-transform: uppercase;
     font-size: 14px;
     font-weight: 600;
     line-height: 20px;
+    &:hover {
+      background-color: var(--primary-100);
+    }
     @include bp768 {
       font-size: 18px;
       line-height: 28px;
