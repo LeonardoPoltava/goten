@@ -82,3 +82,12 @@ filterButtons.forEach(button => {
         this.classList.add('active');
     });
 });
+const blogNav = document.querySelector(".blog-nav");
+
+blogNav.addEventListener("click", (event) => {
+    event.preventDefault();
+    if(event.target.classList.contains("blog-nav__elem")) {
+        let targetId = event.target.getAttribute("href");
+        document.querySelector(targetId).scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+    }
+})
