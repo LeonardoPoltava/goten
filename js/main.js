@@ -66,28 +66,31 @@ burgerButton.addEventListener('click', function () {
 });
 // blog
 const filterButtons = document.querySelectorAll('.blog-filter__button');
-filterButtons.forEach(button => {
-    button.addEventListener('click', function () {
-        const tabName = this.getAttribute('data-category');
-        const blocks = document.querySelectorAll(`.blog-list__elem`);
+if(filterButtons.length) {
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            const tabName = this.getAttribute('data-category');
+            const blocks = document.querySelectorAll(`.blog-list__elem`);
 
-        filterButtons.forEach(btn => btn.classList.remove('active'));
-        blocks.forEach(post => {
-            if (tabName === 'all' || post.dataset.category === tabName) {
-                post.style.display = 'grid';
-            } else {
-                post.style.display = 'none';
-            }
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            blocks.forEach(post => {
+                if (tabName === 'all' || post.dataset.category === tabName) {
+                    post.style.display = 'grid';
+                } else {
+                    post.style.display = 'none';
+                }
+            });
+            this.classList.add('active');
         });
-        this.classList.add('active');
     });
-});
+}
 const blogNav = document.querySelector(".blog-nav");
-
-blogNav.addEventListener("click", (event) => {
-    event.preventDefault();
-    if(event.target.classList.contains("blog-nav__elem")) {
-        let targetId = event.target.getAttribute("href");
-        document.querySelector(targetId).scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
-    }
-})
+if(blogNav) {
+    blogNav.addEventListener("click", (event) => {
+        event.preventDefault();
+        if(event.target.classList.contains("blog-nav__elem")) {
+            let targetId = event.target.getAttribute("href");
+            document.querySelector(targetId).scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+        }
+    })
+}

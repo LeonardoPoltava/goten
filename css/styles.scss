@@ -1700,6 +1700,9 @@ h2 {
 // blog dashboard
 .blog-dashboard {
   background-color: var(--primary-50);
+  .container {
+    width: 100%;
+  }
   @include bp768 {
     min-height: 544px;
     display: flex;
@@ -1711,6 +1714,14 @@ h2 {
     @include bp1024 {
       margin: 0 0 28px;
     }
+  }
+  &__date {
+    margin-top: 56px;
+    display: block;
+    color: var(--primary-500, #6C40FF);
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 28px;
   }
 }
 .blog-info {
@@ -1734,6 +1745,9 @@ h2 {
     grid-gap: 52px;
     grid-template-columns: 1fr 384px;
     align-items: start;
+    &.wide {
+      grid-template-columns: auto;
+    }
   }
 }
 .blog-content {
@@ -1852,4 +1866,72 @@ h2 {
       line-height: 28px;
     }
   }
+}
+// vacancies
+.vacancies-list {
+  margin-top: 24px;
+  display: grid;
+  grid-gap: 20px;
+  @include bp768 {
+    margin-top: 48px;
+    grid-gap: 24px 32px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  &__elem {
+    padding: 28px 20px;
+    border-radius: 16px;
+    display: grid;
+    grid-gap: 8px;
+    background: var(--primary-50);
+    @include bp768 {
+      padding: 72px 40px;
+      grid-gap: 12px;
+    }
+    &:hover {
+      background: var(--primary-500);
+      .vacancies-list__exp {
+        color: var(--white);
+      }
+      .vacancies-list__title {
+        color: var(--gray-50);
+      }
+    }
+  }
+  &__exp {
+    color: var(--primary-500);
+    @include bp768 {
+      font-size: 18px;
+      line-height: 28px;
+    }
+  }
+  &__title {
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 40px;
+    color: var(--text);
+    @include bp768 {
+      font-size: 34px;
+      font-weight: 700;
+      line-height: 42px;
+      letter-spacing: 0.34px;
+    }
+  }
+}
+.vacancy-info {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+  margin-top: 56px;
+  &__title {
+    font-weight: 600;
+    display: block;
+  }
+  &__text {
+    font-weight: 300;
+  }
+}
+.list {
+  font-weight: 300;
+  padding-left: 25px;
+  margin: 12px 0 0;
 }
