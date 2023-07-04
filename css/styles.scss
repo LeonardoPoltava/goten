@@ -1,9 +1,10 @@
 :root {
   --text: #2F3747;
   --white: #fff;
+  --gray-50: #F9FAFD;
   --gray-400: #9BA4B1;
   --gray-600: #6A778B;
-  --gray-50: #F9FAFD;
+  --gray-700: #42526B;
   --primary-50: #EBE5FF;
   --primary-100: #D8CCFF;
   --primary-200: #B199FF;
@@ -253,7 +254,7 @@ h2 {
 
   &__elem {
     display: block;
-    color: var(--text, #2F3747);
+    color: var(--text);
     text-align: center;
     font-size: 18px;
     font-weight: 500;
@@ -1188,6 +1189,14 @@ h2 {
         width: 250px
       }
     }
+    @include bp1440 {
+      .quote-form {
+        max-width: 588px;
+      }
+      .quote-form__input {
+        width: 405px
+      }
+    }
   }
 
   &__left {
@@ -1691,9 +1700,11 @@ h2 {
 // blog dashboard
 .blog-dashboard {
   background-color: var(--primary-50);
-  padding: 56px 0;
   @include bp768 {
-    padding: 144px 0 72px;
+    min-height: 544px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
   &__title {
     margin: 0 0 24px;
@@ -1785,6 +1796,9 @@ h2 {
   display: grid;
   grid-gap: 16px;
   margin-bottom: 32px;
+  &:last-child {
+    margin-bottom: 0;
+  }
   &__elem {
     color: var(--text);
     font-weight: 500;
@@ -1812,6 +1826,30 @@ h2 {
     &:hover {
       background-color: var(--primary-50);
       color: var(--primary-500);
+    }
+  }
+}
+.blog {
+  p {
+    margin: 0 0 40px;
+    color: var(--gray-700);
+    &:last-child {
+      margin: 0;
+    }
+  }
+}
+// privacy policy
+.privacy-dashboard {
+  p {
+    color: var(--gray-700);
+    &:last-child {
+      margin: 0;
+    }
+  }
+  @include bp768 {
+    p {
+      font-size: 18px;
+      line-height: 28px;
     }
   }
 }
