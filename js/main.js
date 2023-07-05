@@ -25,11 +25,15 @@ if(buttons.length) {
 
             // Remove the 'active' class from all buttons and blocks
             buttons.forEach(btn => btn.classList.remove('bases-tabs__elem--active'));
-            document.querySelectorAll('section[data-tab-block]').forEach(blk => blk.style.display = 'none');
-            console.log(block);
-            // Add the 'active' class to the clicked button and block
-            this.classList.add('bases-tabs__elem--active');
-            block.style.display = 'grid';
+            if(tabName === 'all') {
+                document.querySelectorAll('section[data-tab-block]').forEach(blk => blk.style.display = 'grid');
+            }
+            else {
+                document.querySelectorAll('section[data-tab-block]').forEach(blk => blk.style.display = 'none');
+                // Add the 'active' class to the clicked button and block
+                this.classList.add('bases-tabs__elem--active');
+                block.style.display = 'grid';
+            }
         });
     });
 }
