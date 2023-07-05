@@ -1935,3 +1935,52 @@ h2 {
   padding-left: 25px;
   margin: 12px 0 0;
 }
+
+// technologies
+.technologies-tabs {
+  margin-top: 24px;
+  @include bp768 {
+    margin-top: 48px;
+  }
+}
+.technologies-content {
+  display: grid;
+  grid-gap: 32px;
+  margin-top: 24px;
+  @include bp768 {
+    margin-top: 48px;
+    grid-gap: 64px;
+  }
+}
+.technologies-list {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(101px, 1fr));
+  @include bp768 {
+    grid-template-columns: repeat(auto-fill, minmax(185px, 1fr));
+  }
+  &__elem {
+    border-radius: 8px;
+    background: var(--gray-50);
+    height: 101px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @include bp768 {
+      height: 176px;
+    }
+  }
+  &__img {
+    margin-bottom: 6px;
+    display: block;
+  }
+  &__title {
+    font-size: 12px;
+    line-height: 16px;
+    @include bp768 {
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+}
