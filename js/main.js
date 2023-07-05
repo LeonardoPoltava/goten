@@ -27,6 +27,7 @@ if(buttons.length) {
             buttons.forEach(btn => btn.classList.remove('bases-tabs__elem--active'));
             if(tabName === 'all') {
                 document.querySelectorAll('section[data-tab-block]').forEach(blk => blk.style.display = 'grid');
+                this.classList.add('bases-tabs__elem--active');
             }
             else {
                 document.querySelectorAll('section[data-tab-block]').forEach(blk => blk.style.display = 'none');
