@@ -761,6 +761,10 @@ h2 {
     }
   }
 
+  &__title {
+    display: block;
+  }
+
   &__elem {
     padding: 20px 7px;
     border-radius: 8px;
@@ -1578,7 +1582,7 @@ h2 {
   @include bp768  {
     margin-top: 48px;
     grid-gap: 32px;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(25%, 1fr));
   }
   &__elem {
     padding: 28px 20px;
@@ -2024,7 +2028,7 @@ $duration: 1.4s;
 @keyframes dash {
   0% { stroke-dashoffset: $offset; }
   50% {
-    stroke-dashoffset: $offset/4;
+    stroke-dashoffset: calc($offset/4);
     transform:rotate(135deg);
   }
   100% {
