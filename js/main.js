@@ -101,3 +101,99 @@ if(blogNav) {
         }
     })
 }
+// contact form sending
+
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.querySelector('.contact-form');
+    const quoteForm = document.querySelectorAll('.quote-form');
+    const formContent = document.querySelector('.contact-form__content');
+    const loader = document.getElementById('loader');
+    const successMessage = document.getElementById('success-message');
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault(); // Предотвращаем отправку формы по умолчанию
+
+        // Отображаем индикатор загрузки (loader)
+        loader.style.display = 'block';
+        formContent.style.display = 'none';
+
+        // Создаем объект FormData и добавляем данные формы
+        const formData = new FormData(form);
+
+        // Создаем новый объект XMLHttpRequest
+        const xhr = new XMLHttpRequest();
+        xhr.open('POST', '/mail.php'); // Путь к серверному скрипту
+
+        // Обработчик события загрузки
+        xhr.onload = function() {
+            // Проверяем статус ответа сервера
+            if (xhr.status === 200) {
+                // Скрываем индикатор загрузки (loader)
+                loader.style.display = 'none';
+
+                // Отображаем сообщение об успешной отправке
+                successMessage.style.display = 'flex';
+
+                // Очищаем форму после успешной отправки
+                form.reset();
+            } else {
+                // Обработка ошибки отправки
+                // Можно отобразить соответствующее сообщение или выполнить другие действия при ошибке
+            }
+        };
+
+        // Отправляем запрос
+        xhr.send(formData);
+    });
+    quoteForm.forEach(function(elem) {
+        elem.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(elem);
+            const xhr = new XMLHttpRequest();
+            xhr.open('POST', '/quote.php');
+            xhr.onload = function() {
+                if (xhr.status === 200) {
+                    // Create the notification block
+                    const notificationBlock = createNotification();
+
+                    removeNotification(notificationBlock);
+
+                    elem.reset();
+                }
+            };
+            xhr.send(formData);
+        });
+    })
+});
+
+// Function to create the notification block
+function createNotification() {
+    const notification = document.createElement('div');
+    notification.className = 'notification';
+
+    const img = document.createElement('img');
+    img.src = 'images/checkmark.svg';
+    img.width = 65;
+    img.height = 65;
+    img.alt = '';
+
+    const span = document.createElement('span');
+    span.className = 'notification__text';
+    span.textContent = 'Request was sent successfully';
+
+    notification.appendChild(img);
+    notification.appendChild(span);
+
+    document.body.appendChild(notification);
+
+    return notification;
+}
+
+// Function to remove the notification block after 3 seconds
+function removeNotification(notification) {
+    setTimeout(function() {
+        if (notification && notification.parentNode) {
+            notification.parentNode.removeChild(notification);
+        }
+    }, 3200);
+}

@@ -16,12 +16,19 @@
     <link rel="mask-icon" href="images/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
+    <meta property="og:title" content="Goten">
+    <meta property="og:description" content="Simply the Best Cutting-Edge Software Development Company">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.goten.solutions">
+    <meta property="og:image" content="https://www.goten.solutions/images/goten_dark_og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
 </head>
 <body>
 <div class="wrapper">
     <header class="header">
         <div class="header__container container">
-            <a class="logo" href="index.html"><img alt="Goten logo" height="48" src="images/logo.svg" width="94"></a>
+            <a class="logo" href="/"><img alt="Goten logo" height="48" src="images/logo.svg" width="94"></a>
             <button class="header__burger"></button>
             <nav class="nav-menu">
                 <a class="nav-menu__elem" href="technologies.html">Technologies</a>
@@ -192,17 +199,28 @@
     <section class="contact indent container">
         <div class="contact-container">
             <h2 class="contact__title">Start growing your business with us</h2>
-            <span class="contact__text">Please fill out and submit the form, or contact us at sales@goten.com for more information on Goten's services and technologies.</span>
+            <span class="contact__text">Please fill out and submit the form, or contact us at sales@goten.solutions for more information on Goten's services and technologies.</span>
             <form action="#" class="contact-form" method="post">
-                <label class="contact-form__label" for="name">Full Name</label>
-                <input class="contact-form__input" id="name" name="name" placeholder="Your name" type="text">
-                <label class="contact-form__label" for="email">Email</label>
-                <input class="contact-form__input" id="email" name="email" placeholder="Email" type="email">
-                <label class="contact-form__label" for="phone">Phone</label>
-                <input class="contact-form__input" id="phone" name="phone" placeholder="Phone" type="tel">
-                <div class="contact-form__footer">
-                    <span class="contact-form__info">By sending this form I confirm that I have read and accept the Privacy Policy</span>
-                    <button class="contact-form__btn btn">Contact us</button>
+                <div class="contact-form__content">
+                    <label class="contact-form__label" for="name">Full Name</label>
+                    <input class="contact-form__input" id="name" name="name" placeholder="Your name" type="text">
+                    <label class="contact-form__label" for="email">Email</label>
+                    <input class="contact-form__input" id="email" name="email" placeholder="Email" type="email">
+                    <label class="contact-form__label" for="phone">Phone</label>
+                    <input class="contact-form__input" id="phone" name="phone" placeholder="Phone" type="tel">
+                    <div class="contact-form__footer">
+                        <span class="contact-form__info">By sending this form I confirm that I have read and accept the Privacy Policy</span>
+                        <button class="contact-form__btn btn">Contact us</button>
+                    </div>
+                </div>
+                <div id="loader">
+                    <svg class="loader__spinner" width="65px" height="65px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+                        <circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
+                    </svg>
+                </div>
+                <div id="success-message">
+                    <img src="images/checkmark.svg" width="65" height="65" alt="">
+                    <span class="success-text">Request was sent successfully</span>
                 </div>
             </form>
         </div>
@@ -212,11 +230,11 @@
             <div class="footer__head">
                 <div class="footer__left">
                     <span class="footer__title">stay in touch with us</span>
-                    <a class="footer__link" href="mailto: info@goten.com">info@goten.com</a>
+                    <a class="footer__link" href="mailto: info@goten.solutions">info@goten.solutions</a>
                     <a class="footer__link" href="tel: +1 (000) 345-7771">+1 (000) 345-7771</a>
                 </div>
                 <form action="#" class="quote-form" method="post">
-                    <input class="quote-form__input" placeholder="Your business email*" type="text">
+                    <input class="quote-form__input" name="email" placeholder="Your business email*" type="text">
                     <button class="quote-form__btn btn">Get a quote</button>
                 </form>
             </div>
@@ -228,7 +246,7 @@
                 <a class="footer-nav__link" href="blog.html">Blog</a>
             </nav>
             <div class="footer-bottom">
-                <a class="logo" href="index.html"><img alt="Goten logo" height="62" src="images/logo.svg" width="125"></a>
+                <a class="logo" href="/"><img alt="Goten logo" height="62" src="images/logo.svg" width="125"></a>
                 <div class="footer-social">
                     <a class="footer-social__link" href="#">
                         <svg class="footer-social__img" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
