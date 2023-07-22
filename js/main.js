@@ -43,22 +43,24 @@ if(buttons.length) {
     });
 }
 // swiper
-const swiper = new Swiper('.swiper', {
-    loop: true,
-    spaceBetween: 40,
-    pagination: {
-        el: '.swiper-pagination',
-        type: 'custom',
-        clickable: true,
-        renderCustom: function (swiper, current, total) {
-            return '<span class="current">' + current + '</span>' + total;
+if(document.querySelector('.swiper')) {
+    const swiper = new Swiper('.swiper', {
+        loop: true,
+        spaceBetween: 40,
+        pagination: {
+            el: '.swiper-pagination',
+            type: 'custom',
+            clickable: true,
+            renderCustom: function (swiper, current, total) {
+                return '<span class="current">' + current + '</span>' + total;
+            },
         },
-    },
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-    },
-});
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
+}
 // navigation
 const burgerButton = document.querySelector('.header__burger');
 const navigation = document.querySelector('.mobile-nav');
