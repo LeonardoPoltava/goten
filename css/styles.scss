@@ -136,6 +136,9 @@ h2 {
     letter-spacing: 0.48px;
     margin: 0 0 48px;
   }
+  & + p {
+    margin-top: 0;
+  }
 }
 
 .wrapper {
@@ -153,7 +156,8 @@ h2 {
 }
 
 
-.btn {
+.btn,
+.cc_div .cc-link.btn{
   padding: 16px 20px;
   border-radius: 8px;
   background: var(--primary-500);
@@ -1177,6 +1181,12 @@ h2 {
       font-size: 16px;
       line-height: 24px;
     }
+    a {
+      color: var(--text);
+      &:hover {
+        color: var(--primary-600);
+      }
+    }
   }
 
   &__btn {
@@ -1723,6 +1733,9 @@ h2 {
     @include bp1024 {
       margin: 0 0 28px;
     }
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
   &__date {
     margin-top: 56px;
@@ -1767,6 +1780,7 @@ h2 {
   }
 }
 .blog-article {
+  overflow: hidden;
   font-weight: 300;
   @include bp768 {
     font-size: 18px;
@@ -1783,13 +1797,22 @@ h2 {
   &__pic,
   p {
     display: block;
-    margin: 0 0 44px;
+    margin: 44px 0;
+    &:first-child {
+      margin-top: 0;
+    }
     @include bp768 {
-      margin: 0 0 48px;
+      margin: 48px 0;
+      &:first-child {
+        margin-top: 0;
+      }
     }
     &:last-child {
-      margin: 0;
+      margin-bottom: 0;
     }
+  }
+  h2 + p {
+    margin-top: 0;
   }
   &__img {
     max-width: 100%;
@@ -1863,6 +1886,7 @@ h2 {
 }
 // privacy policy
 .privacy-dashboard {
+  min-height: auto;
   p {
     color: var(--gray-700);
     &:last-child {
@@ -2087,4 +2111,52 @@ $duration: 1.4s;
   100% {
     transform: translateX(calc(100% + 20px));
   }
+}
+// new styles
+.footer-text {
+  margin: 48px 0;
+  font-size: 14px;
+  @include bp768 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__left {
+    display: block;
+    margin-bottom: 15px;
+    @include bp768 {
+      margin-bottom: 0;
+    }
+  }
+}
+@media (max-width: 767.98px) {
+  .hidden-xs {
+    display: none;
+  }
+}
+#cc_div #cm {
+  max-width: 30em;
+}
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+  min-width: 700px;
+  @include bp1024 {
+    min-width: auto;
+  }
+}
+table th {
+  background: var(--primary-500);
+  color: var(--white);
+}
+table td,
+table th {
+  text-align: left;
+  padding: 10px;
+  border: 1px solid #000;
+  vertical-align: top;
+}
+.table-holder {
+  width: 100%;
+  overflow-x: auto;
 }
