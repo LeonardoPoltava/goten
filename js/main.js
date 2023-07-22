@@ -1,15 +1,19 @@
 // head
-document.querySelector(".header__btn").addEventListener("click", function (e) {
-    e.preventDefault();
-    document.querySelector('.contact').scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
-})
-document.querySelector(".mobile-nav__btn").addEventListener("click", function (e) {
-    e.preventDefault();
-    navigation.style.display = 'none';
-    burgerButton.classList.remove('header__burger--active');
-    header.classList.remove('header--active');
-    document.querySelector('.contact').scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
-})
+if(document.querySelector(".header__btn")) {
+    document.querySelector(".header__btn").addEventListener("click", function (e) {
+        e.preventDefault();
+        document.querySelector('.contact').scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+    })
+}
+if(document.querySelector(".mobile-nav__btn")) {
+    document.querySelector(".mobile-nav__btn").addEventListener("click", function (e) {
+        e.preventDefault();
+        navigation.style.display = 'none';
+        burgerButton.classList.remove('header__burger--active');
+        header.classList.remove('header--active');
+        document.querySelector('.contact').scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+    })
+}
 // Get all buttons with data-tab attribute
 const buttons = document.querySelectorAll('.bases-tabs__elem[data-tab]');
 
@@ -109,61 +113,64 @@ document.addEventListener('DOMContentLoaded', function() {
     const formContent = document.querySelector('.contact-form__content');
     const loader = document.getElementById('loader');
     const successMessage = document.getElementById('success-message');
+    if(form) {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault(); // Предотвращаем отправку формы по умолчанию
 
-    form.addEventListener('submit', function(e) {
-        e.preventDefault(); // Предотвращаем отправку формы по умолчанию
+            // Отображаем индикатор загрузки (loader)
+            loader.style.display = 'block';
+            formContent.style.display = 'none';
 
-        // Отображаем индикатор загрузки (loader)
-        loader.style.display = 'block';
-        formContent.style.display = 'none';
+            // Создаем объект FormData и добавляем данные формы
+            const formData = new FormData(form);
 
-        // Создаем объект FormData и добавляем данные формы
-        const formData = new FormData(form);
-
-        // Создаем новый объект XMLHttpRequest
-        const xhr = new XMLHttpRequest();
-        xhr.open('POST', '/mail.php'); // Путь к серверному скрипту
-
-        // Обработчик события загрузки
-        xhr.onload = function() {
-            // Проверяем статус ответа сервера
-            if (xhr.status === 200) {
-                // Скрываем индикатор загрузки (loader)
-                loader.style.display = 'none';
-
-                // Отображаем сообщение об успешной отправке
-                successMessage.style.display = 'flex';
-
-                // Очищаем форму после успешной отправки
-                form.reset();
-            } else {
-                // Обработка ошибки отправки
-                // Можно отобразить соответствующее сообщение или выполнить другие действия при ошибке
-            }
-        };
-
-        // Отправляем запрос
-        xhr.send(formData);
-    });
-    quoteForm.forEach(function(elem) {
-        elem.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const formData = new FormData(elem);
+            // Создаем новый объект XMLHttpRequest
             const xhr = new XMLHttpRequest();
-            xhr.open('POST', '/quote.php');
+            xhr.open('POST', '/mail.php'); // Путь к серверному скрипту
+
+            // Обработчик события загрузки
             xhr.onload = function() {
+                // Проверяем статус ответа сервера
                 if (xhr.status === 200) {
-                    // Create the notification block
-                    const notificationBlock = createNotification();
+                    // Скрываем индикатор загрузки (loader)
+                    loader.style.display = 'none';
 
-                    removeNotification(notificationBlock);
+                    // Отображаем сообщение об успешной отправке
+                    successMessage.style.display = 'flex';
 
-                    elem.reset();
+                    // Очищаем форму после успешной отправки
+                    form.reset();
+                } else {
+                    // Обработка ошибки отправки
+                    // Можно отобразить соответствующее сообщение или выполнить другие действия при ошибке
                 }
             };
+
+            // Отправляем запрос
             xhr.send(formData);
         });
-    })
+    }
+    if(quoteForm.length) {
+        quoteForm.forEach(function(elem) {
+            elem.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const formData = new FormData(elem);
+                const xhr = new XMLHttpRequest();
+                xhr.open('POST', '/quote.php');
+                xhr.onload = function() {
+                    if (xhr.status === 200) {
+                        // Create the notification block
+                        const notificationBlock = createNotification();
+
+                        removeNotification(notificationBlock);
+
+                        elem.reset();
+                    }
+                };
+                xhr.send(formData);
+            });
+        })
+    }
 });
 
 // Function to create the notification block
@@ -197,3 +204,122 @@ function removeNotification(notification) {
         }
     }, 3200);
 }
+
+
+// cookie
+
+let cc = initCookieConsent();
+
+// run plugin with your configuration
+cc.run({
+    current_lang: 'en',
+    autoclear_cookies: true,                   // default: false
+    page_scripts: true,                        // default: false
+
+    // mode: 'opt-in'                          // default: 'opt-in'; value: 'opt-in' or 'opt-out'
+    // delay: 0,                               // default: 0
+    // auto_language: null                     // default: null; could also be 'browser' or 'document'
+    // autorun: true,                          // default: true
+    // force_consent: false,                   // default: false
+    // hide_from_bots: true,                   // default: true
+    // remove_cookie_tables: false             // default: false
+    // cookie_name: 'cc_cookie',               // default: 'cc_cookie'
+    // cookie_expiration: 182,                 // default: 182 (days)
+    // cookie_necessary_only_expiration: 182   // default: disabled
+    // cookie_domain: location.hostname,       // default: current domain
+    // cookie_path: '/',                       // default: root
+    // cookie_same_site: 'Lax',                // default: 'Lax'
+    // use_rfc_cookie: false,                  // default: false
+    // revision: 0,                            // default: 0
+
+    onFirstAction: function(user_preferences, cookie){
+        // callback triggered only once
+    },
+
+    onAccept: function (cookie) {
+        // ...
+    },
+
+    onChange: function (cookie, changed_preferences) {
+        // ...
+    },
+
+    languages: {
+        'en': {
+            consent_modal: {
+                title: 'We use cookies!',
+                description: 'This website collects cookies to deliver better user experience. We collect cookies to analyze our website traffic and performance. We do not track you across other sites. You can see our <a href="/privacy-notice.html">Privacy Notice</a>' +
+                    '',
+                primary_btn: {
+                    text: 'Accept all',
+                    role: 'accept_all'              // 'accept_selected' or 'accept_all'
+                },
+                secondary_btn: {
+                    text: 'Customize Selection',
+                    role: 'settings'        // 'settings' or 'accept_necessary'
+                }
+            },
+            settings_modal: {
+                title: 'Cookie preferences',
+                save_settings_btn: 'Save settings',
+                accept_all_btn: 'Accept all',
+                reject_all_btn: 'Reject all',
+                close_btn_label: 'Close',
+                cookie_table_headers: [
+                    {col1: 'Name'},
+                    {col2: 'Domain'},
+                    {col3: 'Expiration'},
+                    {col4: 'Description'}
+                ],
+                blocks: [
+                    {
+                        title: 'Cookie usage 📢',
+                        description: 'I use cookies to ensure the basic functionalities of the website and to enhance your online experience. You can choose for each category to opt-in/out whenever you want. For more details relative to cookies and other sensitive data, please read the full <a href="#" class="cc-link">privacy policy</a>.'
+                    }, {
+                        title: 'Strictly necessary cookies',
+                        description: 'These cookies are essential for the proper functioning of my website. Without these cookies, the website would not work properly',
+                        toggle: {
+                            value: 'necessary',
+                            enabled: true,
+                            readonly: true          // cookie categories with readonly=true are all treated as "necessary cookies"
+                        }
+                    }, {
+                        title: 'Performance and Analytics cookies',
+                        description: 'These cookies allow the website to remember the choices you have made in the past',
+                        toggle: {
+                            value: 'analytics',     // your cookie category
+                            enabled: false,
+                            readonly: false
+                        },
+                        cookie_table: [             // list of all expected cookies
+                            {
+                                col1: '^_ga',       // match all cookies starting with "_ga"
+                                col2: 'google.com',
+                                col3: '2 years',
+                                col4: 'description ...',
+                                is_regex: true
+                            },
+                            {
+                                col1: '_gid',
+                                col2: 'google.com',
+                                col3: '1 day',
+                                col4: 'description ...',
+                            }
+                        ]
+                    }, {
+                        title: 'Advertisement and Targeting cookies',
+                        description: 'These cookies collect information about how you use the website, which pages you visited and which links you clicked on. All of the data is anonymized and cannot be used to identify you',
+                        toggle: {
+                            value: 'targeting',
+                            enabled: false,
+                            readonly: false
+                        }
+                    }, {
+                        title: 'More information',
+                        description: 'For any queries in relation to our policy on cookies and your choices, please contact us.',
+                    }
+                ]
+            }
+        }
+    }
+});
